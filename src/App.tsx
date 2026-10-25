@@ -110,7 +110,7 @@ export default function App() {
       />
 
       {state.view === 'menu' && (
-        <main className="mx-auto grid max-w-7xl gap-6 px-4 py-5 pb-28 lg:grid-cols-3 lg:px-6 lg:py-7 lg:pb-8">
+        <main className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-5 pb-28 lg:grid-cols-3 lg:px-6 lg:py-7 lg:pb-8">
           <div className="lg:col-span-2">
             <MenuView diners={state.diners} soldOut={state.soldOut} onAdd={(item) => dispatch({ type: 'ADD_CART', item })} />
           </div>

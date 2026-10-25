@@ -10,6 +10,11 @@ body { margin: 0; min-width: 320px; min-height: 100vh; background: #fbf5ea; }
 button, input { font: inherit; }
 ::selection { background: #ffddd8; color: #a9231a; }
 
+/* 移动端（≤639px）兜底：禁止 body 级横向滚动，避免窄屏下顶栏/弹窗滚动锁等导致的横向滚动条；不影响桌面与内层 overflow-x-auto */
+@media (max-width: 639px) {
+  html { overflow-x: hidden; }
+}
+
 /* 老人模式全局基础：放大字号约 1.25 倍 */
 .elderly { font-size: 125%; }
 

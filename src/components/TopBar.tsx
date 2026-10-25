@@ -21,7 +21,6 @@ interface TopBarProps {
 export function TopBar({ table, view, serviceCount, language, elderly, onToggleLanguage, onToggleElderly, onView, onService, onConsole }: TopBarProps) {
   const { t } = useTranslation()
   const areaKey = tableAreas[table]
-  const tableLabel = areaKey ? `${table} · ${t(areaKey)}` : table
 
   return (
     <>
@@ -34,16 +33,16 @@ export function TopBar({ table, view, serviceCount, language, elderly, onToggleL
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-chili-500 text-lg font-black text-white shadow-md">{t('common.brand')}</span>
             <span className="hidden sm:block"><strong className="block leading-4 text-charcoal-900">{t('common.brand_name')}</strong><small className="text-charcoal-500">{t('common.subtitle')}</small></span>
           </button>
-          <span className="ml-1 flex items-center gap-1 rounded-full bg-rice-200 px-3 py-2 text-xs font-bold text-charcoal-700"><MapPin size={13} className="text-chili-500" />{tableLabel}</span>
+          <span className="ml-1 flex items-center gap-1 rounded-full bg-rice-200 px-3 py-2 text-xs font-bold text-charcoal-700"><MapPin size={13} className="shrink-0 text-chili-500" />{table}<span className="hidden md:inline"> · {areaKey ? t(areaKey) : ''}</span></span>
           <nav className="ml-auto hidden items-center gap-1 md:flex">
             <Button variant={view === 'menu' ? 'secondary' : 'ghost'} size="sm" onClick={() => onView('menu')}><Search size={16} />{t('common.nav_menu')}</Button>
             <Button variant={view === 'order' ? 'secondary' : 'ghost'} size="sm" onClick={() => onView('order')}><ReceiptText size={16} />{t('common.nav_order')}</Button>
           </nav>
-          <Button variant="outline" size="icon" onClick={onService} className="relative" aria-label={t('common.aria_service')}>
+          <Button variant="outline" size="icon" onClick={onService} className="relative hidden md:inline-flex" aria-label={t('common.aria_service')}>
             <PhoneCall size={18} />{serviceCount > 0 && <span className="absolute -right-1 -top-1 h-3 w-3 rounded-full border-2 border-white bg-chili-500" />}
           </Button>
           <Dialog>
-            <DialogTrigger asChild><Button variant="outline" size="icon" aria-label={t('common.aria_member')}><UserRound size={18} /></Button></DialogTrigger>
+            <DialogTrigger asChild><Button variant="outline" size="icon" className="ml-auto md:ml-0" aria-label={t('common.aria_member')}><UserRound size={18} /></Button></DialogTrigger>
             <DialogContent title={t('common.member_title')}>
               <div className="mt-5 overflow-hidden rounded-2xl bg-gradient-to-br from-charcoal-900 to-charcoal-700 p-5 text-white shadow-card">
                 <div className="flex items-start justify-between"><span className="rounded-xl bg-amber-400 p-2 text-charcoal-900"><Crown /></span><span className="rounded-full bg-white/10 px-3 py-1 text-xs">{t('common.member_badge')}</span></div>
@@ -55,11 +54,11 @@ export function TopBar({ table, view, serviceCount, language, elderly, onToggleL
               </div>
             </DialogContent>
           </Dialog>
-          <Button variant="outline" size="icon" onClick={onConsole} aria-label={t('common.aria_console')}><LayoutDashboard size={18} /></Button>
+          <Button variant="outline" size="icon" onClick={onConsole} className="hidden md:inline-flex" aria-label={t('common.aria_console')}><LayoutDashboard size={18} /></Button>
           <Button variant="outline" size="icon" onClick={onToggleElderly} aria-label={elderly ? '切换至常规模式' : '切换至老人模式'}>
             <Accessibility size={18} className={elderly ? 'text-chili-500' : ''} />
           </Button>
-          <Button variant="outline" size="sm" onClick={onToggleLanguage} aria-label={t('common.aria_lang')}>
+          <Button variant="outline" size="sm" onClick={onToggleLanguage} className="max-sm:h-11" aria-label={t('common.aria_lang')}>
             <Languages size={16} />{language === 'zh' ? 'EN' : '中'}
           </Button>
         </div>

@@ -35,7 +35,7 @@ export function DemoConsole({ open, table, stage, soldOut, services, onOpenChang
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent title={t('console.title')} className="md:max-w-2xl">
         <p className="mt-2 text-sm text-charcoal-500">{t('console.desc')}</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
           <section className="rounded-2xl bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between"><h3 className="font-bold text-charcoal-900">{t('console.table_fulfillment')}</h3><span className="rounded-full bg-rice-100 px-3 py-1 text-xs font-bold text-charcoal-500">{tableLabel}</span></div>
             <div className="mt-4 grid grid-cols-2 gap-2">{stageKeys.map((value) => { const Icon = stageIcons[value]; return <button key={value} onClick={() => onStage(value)} className={`flex items-center gap-2 rounded-xl border p-3 text-left text-sm font-bold transition ${stage === value ? 'border-chili-500 bg-chili-50 text-chili-600' : 'border-charcoal-900/5 bg-rice-50 text-charcoal-500'}`}><Icon size={16} />{t(`console.stage.${value}`)}</button> })}</div>

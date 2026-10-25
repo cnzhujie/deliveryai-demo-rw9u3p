@@ -25,8 +25,8 @@ export function CheckoutView({ items, paid, onPay, onBack }: CheckoutViewProps) 
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-6 lg:py-10">
-      <button onClick={onBack} className="mb-5 text-sm font-bold text-charcoal-500 hover:text-chili-500">← {t('checkout.back')}</button>
-      <div className="grid gap-5 lg:grid-cols-5">
+      <button onClick={onBack} className="mb-5 inline-flex min-h-8 items-center text-sm font-bold text-charcoal-500 hover:text-chili-500 max-sm:min-h-11 max-sm:px-2">← {t('checkout.back')}</button>
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-5">
         <section className="rounded-3xl bg-white p-5 shadow-card lg:col-span-3">
           <div className="flex items-center gap-3"><span className="rounded-xl bg-chili-50 p-3 text-chili-500"><ReceiptText /></span><div><p className="text-xs font-bold text-chili-500">{t('checkout.badge')}</p><h1 className="text-2xl font-extrabold text-charcoal-900">{t('checkout.title')}</h1></div></div>
           <div className="mt-6 space-y-3">{items.map((item) => <div key={item.uid} className="flex justify-between text-sm"><span className="text-charcoal-700">{item.name} <small className="text-charcoal-500">× {item.quantity}</small></span><span className="font-semibold text-charcoal-900">{money(item.price * item.quantity)}</span></div>)}</div>
