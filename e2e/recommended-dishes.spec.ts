@@ -9,7 +9,7 @@ async function enterMenu(page: Page) {
 
 /** 定位推荐菜区域（含 h2 标题的 section div）。 */
 function recommendedSection(page: Page) {
-  return page.getByRole('heading', { name: '推荐菜' }).locator('xpath=../..')
+  return page.getByRole('heading', { name: /推荐菜|Recommended Dishes/ }).locator('xpath=../..')
 }
 
 /** 推荐菜区域内的所有推荐菜卡片（button 元素）。 */
