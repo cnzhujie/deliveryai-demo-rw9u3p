@@ -9,6 +9,7 @@ export interface Product {
   price: number
   image: string
   badge?: string
+  recommended?: boolean
   orderedCount?: number
   options?: {
     portion?: string[]
