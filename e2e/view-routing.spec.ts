@@ -35,13 +35,13 @@ test.describe('视图 URL 路由 - hash 模式', () => {
     await expect(page).toHaveURL(/#\/order$/)
     await page.goBack()
     await expect(page).toHaveURL(/#\/menu$/)
-    await expect(page.getByRole('heading', { name: '鎏金番茄鸳鸯锅' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: '鎏金番茄鸳鸯锅' }).first()).toBeVisible()
   })
 
   test('ROUTE-005: 深链接直达 #/menu（自动绑定示例桌台）', async ({ page }) => {
     await page.goto('/#/menu')
     await expect(page).toHaveURL(/#\/menu$/)
-    await expect(page.getByRole('heading', { name: '鎏金番茄鸳鸯锅' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: '鎏金番茄鸳鸯锅' }).first()).toBeVisible()
   })
 
   test('ROUTE-006: 非法地址回落到首页 #/home', async ({ page }) => {

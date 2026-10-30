@@ -15,37 +15,37 @@ export const tableAreas: Record<string, string> = {
 
 export const products: Product[] = [
   {
-    id: 'p1', name: 'menu.p1.name', category: 'menu.cat.broth', price: 68,
+    id: 'p1', recommended: true, name: 'menu.p1.name', category: 'menu.cat.broth', price: 68,
     description: 'menu.p1.desc', image: hotpot, badge: 'menu.badge.popular',
     options: { flavor: ['menu.option.tomato_beef', 'menu.option.mushroom_beef'], spicy: ['menu.option.mild', 'menu.option.medium', 'menu.option.heavy', 'menu.option.super_spicy'] },
   },
   {
-    id: 'p2', name: 'menu.p2.name', category: 'menu.cat.broth', price: 59,
+    id: 'p2', recommended: true, name: 'menu.p2.name', category: 'menu.cat.broth', price: 59,
     description: 'menu.p2.desc', image: broth, badge: 'menu.badge.signature',
     options: { spicy: ['menu.option.mild', 'menu.option.medium', 'menu.option.heavy', 'menu.option.super_spicy'] },
   },
   {
-    id: 'p3', name: 'menu.p3.name', category: 'menu.cat.meat', price: 42,
+    id: 'p3', recommended: true, name: 'menu.p3.name', category: 'menu.cat.meat', price: 42,
     description: 'menu.p3.desc', image: beef, badge: 'menu.badge.chef', orderedCount: 1,
     options: { portion: ['menu.option.half', 'menu.option.full'], flavor: ['menu.option.original', 'menu.option.spicy_marinate'] },
   },
   {
-    id: 'p4', name: 'menu.p4.name', category: 'menu.cat.meat', price: 48,
+    id: 'p4', recommended: true, name: 'menu.p4.name', category: 'menu.cat.meat', price: 48,
     description: 'menu.p4.desc', image: beef,
     options: { portion: ['menu.option.half', 'menu.option.full'] },
   },
   {
-    id: 'p5', name: 'menu.p5.name', category: 'menu.cat.seafood', price: 39,
+    id: 'p5', recommended: true, name: 'menu.p5.name', category: 'menu.cat.seafood', price: 39,
     description: 'menu.p5.desc', image: hotpot, badge: 'menu.badge.new', orderedCount: 2,
     options: { portion: ['menu.option.half', 'menu.option.full'] },
   },
   {
-    id: 'p6', name: 'menu.p6.name', category: 'menu.cat.seafood', price: 46,
+    id: 'p6', recommended: true, name: 'menu.p6.name', category: 'menu.cat.seafood', price: 46,
     description: 'menu.p6.desc', image: hotpot,
     options: { portion: ['menu.option.half', 'menu.option.full'] },
   },
   {
-    id: 'p7', name: 'menu.p7.name', category: 'menu.cat.veggie', price: 28,
+    id: 'p7', recommended: true, name: 'menu.p7.name', category: 'menu.cat.veggie', price: 28,
     description: 'menu.p7.desc', image: vegetables, orderedCount: 1,
     options: { portion: ['menu.option.half', 'menu.option.full'] },
   },
